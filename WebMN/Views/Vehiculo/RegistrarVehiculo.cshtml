@@ -1,0 +1,29 @@
+﻿@model WebMN.Models.VehiculoModel
+
+@{
+    ViewBag.Title = "Registrar Vehículo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("RegistrarVehiculo", "Vehiculo", FormMethod.Post, new { @class = "pt-3" }))
+{
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Marca, new { @class = "form-control form-control-lg", @type = "text", placeholder = "Marca" })
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Modelo, new { @class = "form-control form-control-lg", @type = "text", placeholder = "Modelo" })
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Color, new { @class = "form-control form-control-lg", @type = "text", placeholder = "Color" })
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Precio, new { @class = "form-control form-control-lg", @type = "text", placeholder = "Precio" })
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.VendedorId, new { @class = "form-control form-control-lg", @type = "text", placeholder = "ID del Vendedor" })
+    </div>
+
+    <div class="mt-3">
+        <input type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" value="REGISTRAR">
+    </div>
+}

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WebMN.Models.VendedorModel>
+
+@{
+    ViewBag.Title = "Consulta de Vendedores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Información de Vendedores</h4>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Cédula</th>
+                        <th>Nombre</th>
+                        <th>Correo Electrónico</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Cedula</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Correo</td>
+                            <td>@item.Estado</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
